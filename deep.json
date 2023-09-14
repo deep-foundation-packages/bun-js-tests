@@ -1,0 +1,134 @@
+{
+  "package": {
+    "name": "@archer-lotos/bun-js-tests",
+    "version": "0.0.1"
+  },
+  "data": [
+    {
+      "package": {
+        "dependencyId": 0,
+        "containValue": "Type"
+      },
+      "id": 1
+    },
+    {
+      "package": {
+        "dependencyId": 0,
+        "containValue": "SyncTextFile"
+      },
+      "id": 2
+    },
+    {
+      "package": {
+        "dependencyId": 0,
+        "containValue": "Handler"
+      },
+      "id": 3
+    },
+    {
+      "package": {
+        "dependencyId": 1,
+        "containValue": "dockerSupportsBunJs"
+      },
+      "id": 4
+    },
+    {
+      "package": {
+        "dependencyId": 0,
+        "containValue": "HandleInsert"
+      },
+      "id": 5
+    },
+    {
+      "id": "TestRun",
+      "type": 1
+    },
+    {
+      "id": "bunJsCompileTimeErrorCode1",
+      "type": 2,
+      "value": {
+        "value": "function fn($data) {\n  return $data['deep']->insert(1)\n}\n"
+      }
+    },
+    {
+      "id": "bunJsCompileTimeErrorHandler1",
+      "type": 3,
+      "from": 4,
+      "to": "bunJsCompileTimeErrorCode1"
+    },
+    {
+      "id": "bunJsCompileTimeErrorHandleInsert1",
+      "type": 5,
+      "from": "TestRun",
+      "to": "bunJsCompileTimeErrorHandler1"
+    },
+    {
+      "id": "bunJsRuntimeErrorCode1",
+      "type": 2,
+      "value": {
+        "value": "function fn($args) {\n  return $args['deep']->insert(1);\n}"
+      }
+    },
+    {
+      "id": "bunJsRuntimeErrorHandler1",
+      "type": 3,
+      "from": 4,
+      "to": "bunJsRuntimeErrorCode1"
+    },
+    {
+      "id": "bunJsRuntimeErrorHandleInsert1",
+      "type": 5,
+      "from": "TestRun",
+      "to": "bunJsRuntimeErrorHandler1"
+    },
+    {
+      "id": "bunJsSelectResolveCode2",
+      "type": 2,
+      "value": {
+        "value": "function fn($data) {\n  return $data['deep']->select(1);\n}"
+      }
+    },
+    {
+      "id": "bunJsSelectResolveHandler2",
+      "type": 3,
+      "from": 4,
+      "to": "bunJsSelectResolveCode2"
+    },
+    {
+      "id": "bunJsSelectResolveHandleInsert2",
+      "type": 5,
+      "from": "TestRun",
+      "to": "bunJsSelectResolveHandler2"
+    },
+    {
+      "id": "bunJsResolveCode1",
+      "type": 2,
+      "value": {
+        "value": "function fn($data) {\n    $result = sprintf(\"Processed data: %s, deep: %s\", print_r($data['data']), \n      print_r($data['deep']));\n    return $result;\n}\n"
+      }
+    },
+    {
+      "id": "bunJsResolveHandler1",
+      "type": 3,
+      "from": 4,
+      "to": "bunJsResolveCode1"
+    },
+    {
+      "id": "bunJsResolveHandleInsert1",
+      "type": 5,
+      "from": "TestRun",
+      "to": "bunJsResolveHandler1"
+    }
+  ],
+  "errors": [],
+  "dependencies": [
+    {
+      "name": "@deep-foundation/core",
+      "version": "0.0.2"
+    },
+    {
+      "name": "@archer-lotos/bun-js-docker-isolation-provider",
+      "version": "0.0.1"
+    }
+  ]
+}

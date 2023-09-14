@@ -1,0 +1,11 @@
+{
+    "name": "@archer-lotos/bun-js-tests",
+    "dependencies": {
+      "@deep-foundation/core": "^0.0.2",
+      "@archer-lotos/bun-js-docker-isolation-provider": "^0.0.1"
+    },
+    "version": "0.0.1",
+    "keywords": [
+      "deep-package"
+    ]
+  }
